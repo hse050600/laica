@@ -1111,8 +1111,8 @@ body {
 
 /* ===================== FOOTER ===================== */
 .site_footer {
-  background: #0f0f10;
-  color: rgba(255, 255, 255, 0.78);
+  /* background: #0f0f10; */
+  color: rgba(0, 0, 0, 0.78);
   padding: 46px 0;
 }
 
@@ -1129,7 +1129,7 @@ body {
 .footer_logo {
   font-weight: 900;
   letter-spacing: 0.08em;
-  color: #fff;
+  color: #000000;
 }
 
 .footer_links {
@@ -1139,13 +1139,13 @@ body {
 }
 
 .footer_links a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .footer_addr {
   margin-top: 16px;
   font-style: normal;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(0, 0, 0, 0.68);
 }
 
 .copyright {

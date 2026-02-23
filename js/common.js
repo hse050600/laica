@@ -111,7 +111,7 @@
       lockScroll(false);
     }
 
-    // ✅ 햄버거 클릭: hover 열린 상태를 “고정(open/close toggle)”으로 만들어줌
+    //  햄버거 클릭: hover 열린 상태를 “고정(open/close toggle)”으로 만들어줌
     hamBtn?.addEventListener("click", () => {
       if (!header || !megaLayer) return;
 
@@ -311,8 +311,8 @@
           const dt = (now - last) / 1000;
           last = now;
 
-          y += speed * dt;         // ✅ 아래로 이동
-          if (y >= 0) y = -loopH;  // ✅ 끝까지 내려오면 다시 위로 점프(하지만 같은 텍스트라 자연스러움)
+          y += speed * dt;         //  아래로 이동
+          if (y >= 0) y = -loopH;  //  끝까지 내려오면 다시 위로 점프(하지만 같은 텍스트라 자연스러움)
 
           track.style.setProperty("--ty", `${y}px`);
           requestAnimationFrame(tick);
