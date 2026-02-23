@@ -67,7 +67,7 @@ body {
 }
 
 .event_section .section_head {
-  text-align: right;
+  margin-left: 1200px;
   margin-bottom: 150px;
 }
 
@@ -145,9 +145,9 @@ body {
 
 .site_header.is_scrolled {
   backdrop-filter: blur(8px);
-  /* box-shadow: inset 10 15px 20px rgba(11, 7, 1, 0.08); */
+  box-shadow: inset 10 15px 20px rgba(11, 7, 1, 0.08);
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0));
 }
 
@@ -576,7 +576,7 @@ body {
   /* border: 1px solid var(--line); */
   background: #fff;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .tab.is_active {
@@ -588,7 +588,7 @@ body {
 .more {
   font-weight: 600;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 999px;
   border: 1px solid var(--muted);
   padding: 10px 20px;
@@ -677,11 +677,11 @@ body {
   position: absolute;
   bottom: 40px;
   left: 3px;
-  height: 30px;
+  height: 55px;
   padding: 0 12px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 70px;
   letter-spacing: 0.02em;
   font-family: "Playfair Display", serif;
   color: #ddd;
@@ -1049,7 +1049,7 @@ body {
 /* ===================== LOCATION ===================== */
 .location_section {
   padding: 92px 200px 120px;
-  background: var(--bg-soft);
+  /* background: var(--bg-soft); */
 }
 
 .map_placeholder {
@@ -1067,48 +1067,136 @@ body {
   letter-spacing: 0.2em;
 }
 
-.map_actions {
+/* ✅ 스크린샷 UI: 아코디언 카드 */
+.map_accordion {
   margin-top: 18px;
+  width: min(580px, 100%);
+  margin-inline: auto;
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: center;
+  gap: 18px;
+}
+
+.map_item {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #e2e2e2;
+  will-change: transform;
+  transform-origin: top; /* ✅ 커질 때 위를 기준으로, 아래로 떨어지게 */
 }
 
 .map_btn {
-  width: min(320px, 100%);
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: #fff;
-  font-weight: 800;
-}
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 
-.map_btn.is_active {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-.map_info {
-  margin-top: 18px;
-  text-align: center;
-  color: var(--muted);
-  font-weight: 650;
-}
-
-.bullets {
-  display: inline-block;
   text-align: left;
-  margin: 0 auto;
-  padding-left: 18px;
+  padding: 28px 34px;
+
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #111;
 }
 
-.bullets li {
-  list-style: disc;
-  margin: 6px 0;
+/* 내용은 카드 내부에 */
+.map_panel {
+  padding: 0 34px 28px;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 500;
 }
 
+.map_panel[hidden] {
+  display: none !important;
+}
+
+.map_panel p {
+  margin: 0;
+}
+
+.map_panel p + p {
+  margin-top: 6px;
+}
+.map_panel strong{
+  color: #434343;
+  font-weight: 500;
+}
+/* 오렌지 카드 + 격자 패턴 */
+.map_item.is_active {
+  background-color: #FFB968;
+}
+
+.map_item.is_active .map_btn {
+  padding: 30px 34px 14px;
+  font-size: 22px;
+}
+
+.map_hint {
+  margin: 10px 0 6px;
+  font-size: 17px;
+}
+
+.map_hint em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.map_panel .map_hint:nth-of-type(2) {
+  padding-top: 10px;
+}
+
+/* 패널 안의 bullets만 정리 */
+.map_panel .bullets {
+  display: block;
+  text-align: left;
+  /* gap: 10px; */
+}
+
+.map_panel .bullets li {
+  list-style: none;
+  margin: 2px 0;
+
+  display: flex;          /* 핵심 */
+  align-items: center;    /* 세로 가운데 정렬 */
+  gap: 8px;               /* 이미지와 텍스트 사이 간격 */
+}
+
+.map_panel .bullets img {
+  width: 45px;
+  height: 22px;
+  flex-shrink: 0;         /* 이미지 줄어들지 않게 */
+}
+
+
+/* ✅ 카드 전체 클릭 가능하게: 패널 텍스트(p/em/li 포함)에서도 커서/클릭 느낌 */
+.map_item { cursor: pointer; }
+
+/* 버튼 말고 내용 영역에서도 포인터 커서 */
+.map_panel,
+.map_panel * { cursor: pointer; }
+
+/* ✅ 0.2초로 부드럽게: 버튼 크기/패딩 변화도 스르륵 */
+.map_btn {
+  transition: padding 0.2s ease, font-size 0.2s ease;
+}
+
+/* ✅ 패널 페이드/살짝 이동(0.2초) */
+.map_panel {
+  user-select: text;                 /* 복사 가능 유지 */
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* 열렸을 때 패널 등장 */
+.map_item.is_active .map_panel {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* ===================== FOOTER ===================== */
 .site_footer {
   /* background: #0f0f10; */

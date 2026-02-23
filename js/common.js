@@ -335,21 +335,98 @@
       });
     }
 
-    /* ===================== MAP BUTTONS ===================== */
-    const mapBtns = $$(".map_actions .map_btn");
-    const mapPanels = $$(".map_info");
+/* ===================== LOCATION ACCORDION (MAP) - SIMPLE ===================== */
+const mapItems = $$(".location_section .map_item");
 
-    if (mapBtns.length && mapPanels.length) {
-      mapBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const key = btn.dataset.map;
+if (mapItems.length) {
+  const reduceMotionMap = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-          mapBtns.forEach((b) => b.classList.toggle("is_active", b === btn));
-          mapPanels.forEach((p) => { p.hidden = p.dataset.mapPanel !== key; });
-        });
+  const closeItem = (item) => {
+    item.classList.remove("is_active");
+
+    const btn = $(".map_btn", item);
+    const panel = $(".map_panel", item);
+
+    btn?.setAttribute("aria-expanded", "false");
+    if (panel) panel.hidden = true;
+  };
+
+  const openItem = (target) => {
+    mapItems.forEach((item) => {
+      const active = item === target;
+
+      item.classList.toggle("is_active", active);
+
+      const btn = $(".map_btn", item);
+      const panel = $(".map_panel", item);
+
+      btn?.setAttribute("aria-expanded", active ? "true" : "false");
+      if (panel) panel.hidden = !active;
+    });
+  };
+
+  // 초기 상태: is_active 붙어있는게 있으면 그거만 열기, 없으면 전부 닫기
+  const initial = mapItems.find((it) => it.classList.contains("is_active"));
+  if (initial) openItem(initial);
+  else mapItems.forEach(closeItem);
+
+  mapItems.forEach((item) => {
+    const btn = $(".map_btn", item);
+    if (!btn) return;
+
+    /* ✅ 눌림 효과: 더 약하게 + 복귀 0.2초 */
+    if (!reduceMotionMap) {
+      let anim = null;
+
+      const pressIn = () => {
+        anim?.cancel();
+        anim = item.animate(
+          [
+            { transform: "translateY(0) scale(1)" },
+            { transform: "translateY(1px) scale(0.995)" },
+          ],
+          { duration: 80, easing: "ease-out", fill: "forwards" }
+        );
+      };
+
+      const pressOut = () => {
+        anim?.cancel();
+        anim = null;
+
+        item.animate(
+          [
+            { transform: "translateY(1px) scale(0.995)" },
+            { transform: "translateY(0) scale(1)" },
+          ],
+          { duration: 200, easing: "ease-out", fill: "forwards" } // 0.2초
+        );
+      };
+
+      item.addEventListener("pointerdown", (e) => {
+        if (e.pointerType === "mouse" && e.button !== 0) return;
+        pressIn();
       });
+      item.addEventListener("pointerup", pressOut);
+      item.addEventListener("pointercancel", pressOut);
+      item.addEventListener("pointerleave", pressOut);
     }
 
+    /* ✅ 카드 어디를 눌러도 토글(p/em/li 포함) */
+    item.addEventListener("click", (e) => {
+      // 혹시 나중에 링크 넣을 때 링크 클릭은 토글 막기
+      if (e.target.closest("a")) return;
+
+      const isOpen = item.classList.contains("is_active");
+      if (isOpen) closeItem(item);
+      else openItem(item);
+
+      // 텍스트 눌러도 키보드 접근성 위해 포커스는 버튼으로
+      if (e.target !== btn) {
+        try { btn.focus({ preventScroll: true }); } catch { btn.focus(); }
+      }
+    });
+  });
+}
     /* ===================== NOW PLAYING DATE BAR ===================== */
     const dateBar = document.querySelector(".now_playing .date_bar");
     if (dateBar) {

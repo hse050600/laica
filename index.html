@@ -264,7 +264,7 @@
       <section class="movie_chart">
         <div class="inner">
           <div class="section_head center">
-            <h2 class="tit">무비차트 TOP</h2>
+            <h2 class="tit">무비차트 TOP5</h2>
           </div>
 
           <div class="chart_controls">
@@ -533,49 +533,70 @@
 
 
 
-      <!-- ============LOCATION==================================================  -->
-      <section class="location_section">
-        <div class="inner">
-          <div class="section_head">
-            <h2 class="tit">오시는 길</h2>
+     <!-- ============ LOCATION ============ -->
+<section class="location_section">
+  <div class="inner">
+    <div class="section_head">
+      <h2 class="tit">오시는 길</h2>
+    </div>
+
+    <div class="map_box">
+      <div class="map_placeholder" role="img" aria-label="지도 자리">
+        <span>MAP</span>
+      </div>
+
+      <!--  스크린샷 스타일: 버튼이 카드로 확장되는 아코디언 -->
+      <div class="map_accordion" aria-label="오시는 길 안내 선택">
+        <!-- 주소안내 -->
+        <div class="map_item" data-map="addr">
+          <button type="button" class="map_btn" aria-expanded="false">
+            주소안내
+          </button>
+
+          <div class="map_panel" hidden>
+            <p><strong>도로명 주소</strong> 서울 서대문구 연희로8길 18 스페이스독 1층</p>
+            <p><strong>지번 주소</strong> 서울 서대문구 연희동 194-25</p>
           </div>
+        </div>
 
-          <div class="map_box">
-            <div class="map_placeholder" role="img" aria-label="지도 자리">
-              <span>MAP</span>
-            </div>
+        <!-- 대중교통 지하철 -->
+        <div class="map_item" data-map="subway">
+          <button type="button" class="map_btn" aria-expanded="false">
+            대중교통 지하철
+          </button>
 
-            <div class="map_actions" aria-label="오시는 길 안내 선택">
-              <button type="button" class="map_btn is_active" data-map="addr">주소안내</button>
-              <button type="button" class="map_btn" data-map="subway">대중교통 지하철</button>
-              <button type="button" class="map_btn" data-map="bus">대중교통 버스</button>
-            </div>
-          </div>
-
-          <div class="map_info" data-map-panel="addr">
-            <p><strong>주소안내<br></strong>도로명 주소 서울 서대문구 연희로8길 18 스페이스독 1층<br>지번 주소 서울 서대문구 연희동 194-25</p>
-          </div>
-
-          <div class="map_info" data-map-panel="subway" hidden>
+          <div class="map_panel" hidden>
             <ul class="bullets">
-              <strong>대중교통 지하철</strong>
               <li>2호선 공항철도 경의중앙선 홍대입구역 3번출구 도보 22분</li>
               <li>2호선 경의중앙선 신촌역 2번출구 도보 25분</li>
             </ul>
           </div>
+        </div>
 
-          <div class="map_info" data-map-panel="bus" hidden>
+        <!-- 대중교통 버스 -->
+        <div class="map_item" data-map="bus">
+          <button type="button" class="map_btn" aria-expanded="false">
+            대중교통 버스
+          </button>
+
+          <div class="map_panel" hidden>
+            <p class="map_hint"><em>연희교차로 하차 도보 1분</em></p>
             <ul class="bullets">
-              <strong>대중교통 - 버스<br></strong>
-              <em>연희교차로 하차 도보 1분</em>
-              <li>7017, 7612, 7720, 7734, 7739, 8773</li>
-              <li>163, 110a, 110b</li>
-              <em>서대문우체국 하차 도보 4분</em>
-              <li>간선 171, 172, 674, 700</li>
+              <li><img src="img/bus_01.jpg" alt="">7017, 7612, 7720, 7734, 7739, 8773</li>
+              <li><img src="img/bus_02.jpg" alt="">163, 110a, 110b</li>
+            </ul>
+
+            <p class="map_hint"><em>서대문우체국 하차 도보 4분</em></p>
+            <ul class="bullets">
+              <li><img src="img/bus_02.jpg" alt="">간선 171, 172, 674, 700</li>
             </ul>
           </div>
         </div>
-      </section>
+      </div>
+      <!-- /.map_accordion -->
+    </div>
+  </div>
+</section>
 
       <section class="after">
         <div class="inner">
