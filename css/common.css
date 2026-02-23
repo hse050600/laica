@@ -66,8 +66,9 @@ body {
   left: 16px;
 }
 
-.section_head {
-  margin-bottom: 60px;
+.event_section .section_head {
+  text-align: right;
+  margin-bottom: 150px;
 }
 
 .section_head.center {
@@ -135,7 +136,7 @@ body {
   padding-left: 120px;
   padding-right: 32px;
 
-  /* ✅ 투명 헤더 */
+  /*  투명 헤더 */
   background: transparent;
 
   transition: background 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
@@ -326,7 +327,7 @@ body {
   border-left: 1px solid rgba(17, 17, 17, 0.10);
 }
 
-/* ✅ hover한 상위메뉴 컬럼 강조 */
+/*  hover한 상위메뉴 컬럼 강조 */
 .mega_col.is_active {
   background: #edeae3;
 }
@@ -449,7 +450,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  /* ✅ 헤더/텍스트 가독성용 그라데이션 */
+  /*  헤더/텍스트 가독성용 그라데이션 */
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.10) 40%, rgba(0, 0, 0, 0.45) 100%);
 }
 
@@ -695,7 +696,7 @@ body {
   padding-top: 15px;
 }
 
-/* ✅ 연령아이콘 h3 옆 */
+/*  연령아이콘 h3 옆 */
 
 .movie_chart .tit {
   /* font-family: "Playfair Display", serif; */
@@ -950,21 +951,25 @@ body {
 /* ===================== EVENT SECTION ===================== */
 .event_section {
   /* now_playing / location_section이 좌우 200px 쓰는 중이면 통일 */
-  padding: 110px 200px 120px;
+  padding: 110px 200px 220px;
   background: #fff;
 }
 
 .event_grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
-  gap: 80px;
+  gap: 150px;
   align-items: stretch;
 }
 
 .event_col {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 100px;
+}
+
+.event_grid > .event_col:last-of-type{
+  margin-top: 150px;
 }
 
 .event_item { min-width: 0; }
@@ -989,8 +994,10 @@ body {
 
 .event_name {
   margin-top: 16px;
-  font-size: 22px;
-  font-weight: 900;
+  /* text-align: center; */
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
@@ -1013,7 +1020,7 @@ body {
   will-change: transform;
 }
 
-/* ✅ 스크린샷처럼: 세로 글자 + 180도 뒤집힘 + 위→아래로 흐름 */
+/*  스크린샷처럼: 세로 글자 + 180도 뒤집힘 + 위→아래로 흐름 */
 .event_ticker .ticker_text {
   writing-mode: vertical-rl;
   /* text-orientation: upright; */
@@ -1021,8 +1028,8 @@ body {
   /* 180도 뒤집혀 보이게 (스크린샷 느낌 핵심) */
   /* transform: rotate(180deg); */
 
-  font-size: 70px;
-  font-weight: 700;
+  font-size: 90px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1;
   color: #111;
