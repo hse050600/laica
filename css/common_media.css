@@ -1,0 +1,128 @@
+/* css/common_media.css */
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  .inner { padding: 0 20px; }
+
+  .gnb { gap: 28px; }
+
+  .swiper-slide .txt p { font-size: 32px; }
+
+  .now_playing .tit { font-size: 34px; }
+  .time_row { column-gap: 60px; }
+  .time_item { grid-template-columns: minmax(0, 1fr) minmax(200px, 320px); }
+  .movie_link { font-size: 20px; }
+  .poster_sm { width: 68px; height: 100px; }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  :root { --header-h: 64px; }
+
+  /* 모바일에서 top nav 숨기고, 오른쪽(검색/햄버거)만 사용 */
+  .site_nav { display: none; }
+
+  .logo img { height: 26px; }
+
+  /* Mega menu를 햄버거로 열 때: 전체 펼쳐진 형태 */
+  .mega_layer {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+  }
+
+  .mega_dim {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+
+  .mega_panel {
+    position: relative;
+    max-height: calc(100vh - var(--header-h));
+    overflow: auto;
+    box-shadow: none;
+    border-top: 0;
+  }
+
+  .mega_inner { padding: 18px 0 22px; }
+  .mega_grid { grid-template-columns: 1fr; }
+
+  .mega_col {
+    min-height: auto;
+    padding: 12px 18px;
+    justify-content: flex-start;
+    border-left: 0 !important;
+    border-top: 1px solid rgba(17, 17, 17, 0.10);
+    background: #fff;
+  }
+  .mega_col:first-child { border-top: 0; }
+
+  .mega_list { text-align: left; }
+  .mega_list a { padding: 12px 8px; }
+
+  /* Hero */
+  .swiper-slide { min-height: 520px; }
+  .swiper-slide .txt p { font-size: 26px; }
+  .swiper-slide .txt span { font-size: 15px; }
+
+  .slider_btn { width: 40px; height: 40px; }
+
+  /* movie chart */
+  .chart_arrow { display: none; }
+  .chart_item { flex-basis: 220px; }
+
+  /* now playing: 768부터 1열 */
+  .now_playing { padding: 80px 0 100px; }
+  .now_playing .tit { font-size: 28px; }
+
+  .date_bar {
+    max-width: 100%;
+    justify-content: flex-start;
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .date_btn { font-size: 14px; padding: 12px 16px; }
+
+  .timeline { margin-top: 36px; }
+
+  .time_row {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .time_item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+    column-gap: 14px;
+  }
+
+  .poster_sm { width: 58px; height: 84px; }
+  .movie_link { font-size: 18px; text-underline-offset: 8px; }
+  .time_range strong { font-size: 18px; }
+  .time_range em { font-size: 13px; }
+
+  .map_placeholder { height: 320px; }
+
+  .footer_top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  .tit { font-size: 22px; }
+
+  /* now playing: 아주 좁으면 time_box 아래로 */
+  .time_item { grid-template-columns: 1fr; row-gap: 10px; }
+  .time_box { justify-self: stretch; }
+}
