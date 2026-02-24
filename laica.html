@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="LAIKA CINEMA - 라이카시네마 소개" />
+  <meta name="keywords" content="LAIKA CINEMA, 라이카시네마, 예술영화관, 스페이스독" />
+  <meta name="author" content="heesun" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAIKA CINEMA - 라이카시네마</title>
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ✅ 2번째 페이지 전용 -->
+  <link rel="stylesheet" href="css/laica.css" />
+
+  <link rel="stylesheet" href="css/common_media.css" />
+  <link rel="stylesheet" href="css/laica_media.css" />
+
+  <script defer src="js/common.js"></script>
+  <!-- ✅ 시스템 섹션 활성 처리(선택) -->
+  <script defer src="js/laica.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+  </style>
+</head>
+
+<body>
+  <a href="#content" class="skip">본문 바로가기</a>
+
+  <div class="wrap">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site_header" id="top">
+      <div class="inner header_inner">
+        <!-- ✅ 로고 링크는 필요에 맞게 index.html로 교체 -->
+        <a href="index.html" class="logo" aria-label="LAIKA CINEMA 홈">
+          <img src="./img/logo.png" alt="LAIKA CINEMA" />
+        </a>
+
+        <!-- Desktop NAV -->
+        <nav class="site_nav" aria-label="주 메뉴">
+          <ul class="gnb" id="gnb">
+            <li class="gnb_item" data-menu="laica">
+              <a href="laica.html" class="gnb_link" aria-current="page">라이카시네마</a>
+
+              <ul class="sub_list">
+                <li><a href="#">SPACE DOGS</a></li>
+                <li><a href="#">이용안내 및 시설</a></li>
+                <li><a href="#">예매방법</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="movie">
+              <a href="#" class="gnb_link">영화</a>
+
+              <ul class="sub_list">
+                <li><a href="#">현재상영작</a></li>
+                <li><a href="#">상영예정작</a></li>
+                <li><a href="#">상영종료작</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="ticket">
+              <a href="#" class="gnb_link">예매</a>
+
+              <ul class="sub_list">
+                <li><a href="#">예매 바로가기</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="event">
+              <a href="#" class="gnb_link">이벤트</a>
+
+              <ul class="sub_list">
+                <li><a href="#">현장이벤트</a></li>
+                <li><a href="#">기획전 / 행사</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="add">
+              <a href="#" class="gnb_link">더보기</a>
+
+              <ul class="sub_list">
+                <li><a href="#">단체 / 대관문의</a></li>
+                <li><a href="#">공지 / 문의</a></li>
+                <li><a href="#">요금 및 쿠폰</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Right Icons -->
+        <div class="right">
+          <button type="button" class="icon_btn btn_search" aria-controls="searchLayer" aria-expanded="false">
+            <span class="sr_only">검색 열기</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm7.8 5.3-4.2-4.2 1.4-1.4 4.2 4.2-1.4 1.4Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+
+          <button type="button" class="icon_btn btn_ham" aria-controls="megaLayer" aria-expanded="false">
+            <span class="sr_only">전체 메뉴 열기</span>
+            <span class="ham_lines" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================== MEGA MENU ===================== -->
+      <div class="mega_layer" id="megaLayer" aria-hidden="true">
+        <div class="mega_dim" data-layer-close="mega"></div>
+
+        <div class="mega_panel" aria-label="전체 하위 메뉴">
+          <div class="inner mega_inner">
+            <div class="mega_grid">
+              <div class="mega_col" data-col="laica">
+                <ul class="mega_list">
+                  <li><a href="laica.html"><h3>라이카시네마</h3></a></li>
+                  <li><a href="#">SPACE DOGS</a></li>
+                  <li><a href="#">이용안내 및 시설</a></li>
+                  <li><a href="#">예매방법</a></li>
+                  <li><a href="#">오시는 길</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="movie">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>영화</h3></a></li>
+                  <li><a href="#">현재상영작</a></li>
+                  <li><a href="#">개봉예정작</a></li>
+                  <li><a href="#">상영종료작</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="ticket">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>예매</h3></a></li>
+                  <li><a href="#">예매 바로가기</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="event">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>이벤트</h3></a></li>
+                  <li><a href="#">현장 이벤트</a></li>
+                  <li><a href="#">기획전/행사</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="add">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>더보기</h3></a></li>
+                  <li><a href="#">단체/대관문의</a></li>
+                  <li><a href="#">공지/문의</a></li>
+                  <li><a href="#">요금 및 쿠폰</a></li>
+                </ul>
+              </div>
+            </div><!-- //.mega_grid -->
+          </div><!-- //.inner -->
+        </div><!-- //.mega_panel -->
+      </div><!-- //.mega_layer -->
+
+      <!-- ===================== SEARCH LAYER ===================== -->
+      <div class="search_layer" id="searchLayer" aria-hidden="true">
+        <div class="search_dim" data-layer-close="search"></div>
+
+        <div class="search_panel" role="dialog" aria-modal="true" aria-label="검색">
+          <form class="search_form" action="#" method="get">
+            <input type="search" name="q" placeholder="검색어를 입력하세요" aria-label="검색어 입력" />
+            <button type="submit" class="btn btn_primary">검색</button>
+          </form>
+
+          <button type="button" class="search_close" data-layer-close="search" aria-label="검색 닫기">
+            닫기
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="content" class="laica_about">
+      <h1 class="sr_only">라이카시네마 소개</h1>
+
+      <!-- ===================== HERO ===================== -->
+      <section class="about_hero" aria-label="라이카시네마 소개">
+        <div class="about_hero_media" aria-hidden="true">
+          <img src="img/laica_hero.jpg" alt="" />
+        </div>
+
+        <div class="about_hero_inner">
+          <p class="about_hero_line">라이카시네마는 연희동 최초의 <strong>예술영화관</strong>입니다.</p>
+          <p class="about_hero_line"><strong>최초의 우주개 라이카(LAICA)</strong>를 기리며 탄생했습니다.</p>
+        </div>
+      </section>
+
+    
+<!-- ===================== SPLIT BANNER (ONE IMAGE) ===================== -->
+<section class="about_split" aria-label="라이카시네마 메시지">
+  <!-- ✅ 배경 이미지 1장 -->
+  <div class="split_bg" aria-hidden="true">
+    <img src="img/laica_split.jpg" alt="">
+  </div>
+
+  <!-- ✅ 텍스트만 좌/우 배치 -->
+  <div class="inner split_inner">
+    <!-- LEFT TEXT -->
+    <div class="split_left_content">
+      <img src="img/whitelogo.png" alt="화이트로고">
+      <h2 class="split_title">영화 같은 순간<br />함께해요</h2>
+      <a href="#" class="split_btn">자세히보기 </a>
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div class="split_right_content">
+      <p>
+        단 하나의 존재, 라이카시네마는 라이카시네마만의 유니크한 콘텐츠를 선보입니다.<br />
+        최적의 시스템과 프로그램으로 영화 관람 그 이상의 가치를 전달합니다.<br />
+        영화 같은 시간을 라이카시네마에서 함께하세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <!-- ===================== SYSTEM ===================== -->
+      <section class="system_section" aria-label="시스템 소개">
+        <div class="inner">
+          <h2 class="system_title">
+            최적의 시스템과 그 프로그램으로 영화 관람 그 이상의 가치를 전달합니다
+          </h2>
+
+          <div class="system_rows">
+            <article class="system_row is_active">
+              <figure class="system_photo">
+                <img src="img/laica_sys_01.jpg" alt="프로젝터 렌즈 이미지" />
+              </figure>
+
+              <div class="system_info">
+                <span class="spec_bullet" aria-hidden="true">
+                    <i class="fa-solid fa-eye-dropper"></i>
+                </span>
+                <div class="spec_txt">
+                  <h3 class="spec_title">Projector <span aria-hidden="true">|</span> Christie pure RGB laser projector</h3>
+                  <p class="spec_desc">선명한 명암과 깊은 색감으로 몰입을 완성합니다.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="system_row">
+              <figure class="system_photo">
+                <img src="img/laica_sys_02.jpg" alt="사운드 장비 이미지" />
+              </figure>
+
+              <div class="system_info">
+                <span class="spec_bullet" aria-hidden="true">
+                    <i class="fa-solid fa-microphone"></i>
+                </span>
+                <div class="spec_txt">
+                  <h3 class="spec_title">Sound <span aria-hidden="true">|</span> Dolby Surround 7.1 / Dolby Atmos</h3>
+                  <p class="spec_desc">공간을 감싸는 입체 음향, 장면의 온도를 더합니다.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="system_row">
+              <figure class="system_photo">
+                <img src="img/laica_sys_03.jpg" alt="좌석 이미지" />
+              </figure>
+
+              <div class="system_info">
+                <span class="spec_bullet" aria-hidden="true">
+                    <i class="fa-solid fa-couch"></i>
+                </span>
+                <div class="spec_txt">
+                  <h3 class="spec_title">Seats <span aria-hidden="true">|</span> HS-SMART SEATS</h3>
+                  <p class="spec_desc">장시간 관람에도 편안한 착석감을 제공합니다.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT SPACEDOG ===================== -->
+      <section class="spacedog_section" aria-label="스페이스독 소개">
+        <div class="inner">
+          <h2 class="spacedog_title">About SPACEDOG</h2>
+
+          <figure class="spacedog_photo">
+            <img src="img/laica_spacedog.jpg" alt="SPACEDOG 외관 이미지" />
+          </figure>
+
+          <div class="spacedog_desc">
+            <p>
+              라이카시네마는 연희동의 복합문화공간 스페이스독(SPACEDOG) 안에서 시작된 시네마 프로젝트입니다.<br />
+              영화, 전시, 음악, 커뮤니티가 자연스럽게 이어지는 공간의 리듬 속에서,
+              라이카시네마는 관람 이상의 경험을 제안합니다.<br />
+              작은 행성과 같은 스페이스독에서 더 가깝고, 더 진한 시간을 함께하세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== VISIT ===================== -->
+      <section class="visit_section" aria-label="오시는 길">
+        <div class="inner">
+          <h2 class="visit_title">오시는 길</h2>
+
+          <div class="visit_grid">
+            <!-- LEFT CARDS -->
+            <div class="visit_cards">
+              <!-- 교통 -->
+              <div class="visit_card">
+                <dl class="route_dl">
+                  <div class="route_row">
+                    <dt>지하철</dt>
+                    <dd>
+                      홍대입구역 3번 출구(2호선/공항철도/경의중앙선) 도보 22분<br />
+                      신촌역 2번 출구(2호선/경의중앙선) 도보 25분
+                    </dd>
+                  </div>
+
+                  <div class="route_row">
+                    <dt>버스</dt>
+                    <dd>
+                      <strong>연희교차로 하차</strong><br />
+                      (지선) 7017, 7612, 7720, 7734, 7739, 8773<br />
+                      (간선) 163, 110A, 110B<br /><br />
+
+                      <strong>서대문우체국 하차</strong><br />
+                      (간선) 171, 172, 674, 700
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
+              <!-- 주소/연락처 -->
+              <div class="visit_card">
+                <p class="visit_addr">
+                  서울특별시 서대문구 연희로 8길 18, 스페이스독 1층
+                </p>
+
+                <p class="visit_contact">
+                  TEL. 070-7780-0963 &nbsp;|&nbsp; FAX. 02-322-2135<br />
+                  EMAIL. LAIKA@SPACEDOG.CO.KR
+                </p>
+              </div>
+            </div>
+
+            <!-- RIGHT MAP -->
+            <div class="visit_map" role="img" aria-label="지도 자리">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.572197238327!2d126.92600298868592!3d37.565141752124134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c990371ad026b%3A0x4e615c50d0af8840!2z65287J207Lm07Iuc64Sk66eI!5e0!3m2!1sko!2skr!4v1771912453352!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site_footer">
+      <div class="inner">
+        <div class="footer_top">
+          <a href="#top" class="footer_logo" aria-label="상단으로 이동">
+            <img src="img/graylogo.jpg" alt="LAIKA CINEMA" />
+          </a>
+
+          <ul class="footer_links">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+          </ul>
+        </div>
+
+        <address class="footer_addr">
+          <p>주소. 서울특별시 서대문구 연희로 8길 18, 스페이스독 1층 ㅣ대표자명 : 서기분ㅣ 사업자등록번호 414-49-00381</p>
+          <strong>Tel. 070-7780-0963</strong>
+          <p>(유료, 평일 09시~18시)</p>
+          <strong>Fax. 02-322-2135</strong>
+          <p>(유료, 평일 09시~18시)</p>
+        </address>
+
+        <p class="copyright">Copyright ⓒ 2026 LAIKA CINEMA All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

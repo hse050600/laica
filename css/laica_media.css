@@ -1,0 +1,85 @@
+/* css/laica_media.css */
+
+/* 1024px 이하 */
+@media (max-width: 1024px){
+  .laica_about .inner{ padding: 0 40px; }
+
+  .about_hero_line{ font-size: 18px; }
+
+  .split_left .split_overlay{ left: 44px; }
+  .split_title{ font-size: 36px; }
+
+  .system_row{
+    grid-template-columns: 360px 1fr;
+    gap: 60px;
+  }
+
+  .spacedog_title{ font-size: 30px; }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px){
+  .laica_about .inner{ padding: 0 24px; }
+
+  .about_hero{
+    height: 62vh;
+    min-height: 480px;
+  }
+
+  /* split: 2열 → 1열 */
+  .about_split{
+    grid-template-columns: 1fr;
+  }
+
+  .split_panel{
+    min-height: 420px;
+  }
+
+  .split_left .split_overlay{
+    top: auto;
+    bottom: 54px;
+    transform: none;
+  }
+
+  .split_title{ font-size: 32px; }
+
+  .split_right .split_copy{
+    left: 28px;
+    right: 28px;
+    bottom: 34px;
+    font-size: 13px;
+  }
+
+  /* system: 2열 → 1열 */
+  .system_section{ padding: 90px 0 130px; }
+  .system_title{ font-size: 22px; margin-bottom: 46px; }
+
+  .system_row{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .system_photo img{
+    aspect-ratio: 16 / 10;
+  }
+
+  /* visit: 2열 → 1열 */
+  .visit_grid{
+    grid-template-columns: 1fr;
+  }
+
+  .visit_map{
+    min-height: 320px;
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px){
+  .about_hero_line{ font-size: 16px; }
+
+  .split_left .split_overlay{ left: 22px; }
+  .split_title{ font-size: 26px; }
+
+  .visit_card{ padding: 22px 20px; }
+  .route_row{ grid-template-columns: 60px 1fr; }
+}
