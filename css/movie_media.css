@@ -1,0 +1,71 @@
+/* css/movie_media.css */
+
+/* 1024px 이하 */
+@media (max-width: 1024px){
+  .movie_page .inner{ padding: 0 40px; }
+
+  .movie_section_head .sec_title{ font-size: 30px; }
+
+  .finder_card{ padding: 34px 34px; }
+  .finder_title{ font-size: 26px; }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px){
+  .movie_page .inner{ padding: 0 24px; }
+
+  .movie_section{ padding: 70px 0 46px; }
+  .movie_section_head .sec_title{ font-size: 26px; }
+
+  /* 더보기 버튼은 모바일에서 아래로 내려오게 */
+  .movie_section_head .sec_more{
+    position: static;
+    margin-top: 10px;
+  }
+
+  .finder_card{ padding: 28px 22px; }
+  .finder_title{ font-size: 22px; }
+
+  .finder_form{
+    height: 58px;
+    padding-left: 66px;
+  }
+
+  .finder_avatar{
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    left: 12px;
+  }
+
+  .finder_input{ font-size: 15px; }
+  .finder_placeholder{
+    left: 66px;
+    font-size: 15px;
+  }
+
+  .finder_submit{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .finder_chip{
+    height: 46px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .finder_chip .chip_icon,
+  .finder_chip .chip_avatar{
+    width: 36px;
+    height: 36px;
+  }
+
+  .finder_chip .chip_icon{ font-size: 18px; }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px){
+  .movie_section_head .sec_title{ font-size: 22px; }
+}

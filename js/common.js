@@ -446,3 +446,40 @@ if (mapItems.length) {
     }
   });
 })();
+
+/* ===================== MOVIE CHART ARROWS (SCROLL) ===================== */
+/* ✅ 여러 개의 chart_wrap을 전부 지원 */
+$$(".chart_wrap").forEach((wrap) => {
+  const chartSlider = $(".chart_slider", wrap);
+  const arrowLeft = $(".chart_arrow.left", wrap);
+  const arrowRight = $(".chart_arrow.right", wrap);
+
+  if (!chartSlider) return;
+
+  const getScrollAmount = () => {
+    const first = chartSlider.querySelector(".chart_item");
+    if (!first) return 280;
+
+    const w = first.getBoundingClientRect().width;
+    const list = chartSlider.querySelector(".chart_list");
+
+    let gap = 0;
+    if (list) {
+      const style = window.getComputedStyle(list);
+      gap = parseFloat(style.gap || style.columnGap || "0") || 0;
+    }
+    return w + gap;
+  };
+
+  const scrollByAmount = (dir) => {
+    chartSlider.scrollBy({ left: dir * getScrollAmount(), behavior: "smooth" });
+  };
+
+  arrowLeft?.addEventListener("click", () => scrollByAmount(-1));
+  arrowRight?.addEventListener("click", () => scrollByAmount(1));
+
+  chartSlider.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") { e.preventDefault(); scrollByAmount(-1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); scrollByAmount(1); }
+  });
+});

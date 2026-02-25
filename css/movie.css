@@ -1,0 +1,275 @@
+/* css/movie.css */
+
+/* 페이지 컨테이너 */
+.movie_page{
+  background: #fff;
+}
+
+/* movie 페이지에서만 inner 폭/패딩 정리 */
+.movie_page .inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* 현재 페이지 메뉴 표시 */
+.gnb_link[aria-current="page"]{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #ffbb7b;
+}
+
+/* ===================== MOVIE SECTIONS ===================== */
+.movie_section{
+  padding: 90px 0 60px;
+}
+
+.movie_section + .movie_section{
+  padding-top: 30px;
+}
+
+.movie_section_head{
+  position: relative;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.movie_section_head .kicker{
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--brand);
+}
+
+.movie_section_head .sec_title{
+  margin-top: 6px;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #111;
+}
+
+.movie_section_head .sec_more{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,17,17,0.18);
+  background: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  color: #6b7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie_section_head .sec_more:hover{
+  color: #111;
+  border-color: rgba(17,17,17,0.35);
+}
+
+/* movie_chart 섹션 밖에서도 제목 스타일이 나오게 */
+.movie_page .movie_tit{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-top: 10px;
+}
+
+.movie_page .movie_tit img{
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  transform: translateY(1px);
+}
+
+/* ===================== FINDER (2번째 이미지 스타일) ===================== */
+.movie_finder{
+  padding: 90px 0 120px;
+  background: #f6f7f9;
+}
+
+.finder_card{
+  background: #fff;
+  border-radius: 28px;
+  padding: 40px 44px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.finder_title{
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.finder_title span{
+  margin-left: 6px;
+  font-weight: 900;
+}
+
+/* 검색바 */
+.finder_form{
+  margin-top: 18px;
+  position: relative;
+
+  height: 68px;
+  border-radius: 16px;
+  border: 1px solid rgba(17,17,17,0.65);
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  padding: 0 14px 0 78px;
+}
+
+.finder_avatar{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.finder_avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.finder_input{
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* 커스텀 placeholder */
+.finder_placeholder{
+  position: absolute;
+  left: 78px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(17,17,17,0.75);
+
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.finder_placeholder strong{
+  color: #2563eb;
+  font-weight: 900;
+}
+
+.finder_input:focus + .finder_placeholder,
+.finder_input:not(:placeholder-shown) + .finder_placeholder{
+  opacity: 0;
+  transform: translateY(-50%) translateX(6px);
+}
+
+.finder_submit{
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  border: 0;
+  background: transparent;
+  color: #111;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finder_submit:hover{
+  background: #f3f4f6;
+}
+
+/* 칩 */
+.finder_chips{
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.finder_chip{
+  height: 54px;
+  padding: 0 18px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid rgba(17,17,17,0.12);
+  background: #fff;
+
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.finder_chip .chip_icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #f3f4f6;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.finder_chip.is_primary{
+  background: #ffe55b;
+  border-color: transparent;
+}
+
+.finder_chip.is_primary .chip_icon{
+  background: #fff;
+}
+
+.finder_chip.is_accent{
+  background: #f6b8a8;
+  border-color: transparent;
+}
+
+.finder_chip .chip_avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+  flex: 0 0 auto;
+}
+
+.finder_chip .chip_avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

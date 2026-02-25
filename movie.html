@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="LAIKA CINEMA - 영화" />
+  <meta name="keywords" content="LAIKA CINEMA, 영화, 현재상영작, 상영예정작" />
+  <meta name="author" content="heesun" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAIKA CINEMA - 영화</title>
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/movie.css" />
+  <link rel="stylesheet" href="css/common_media.css" />
+  <link rel="stylesheet" href="css/movie_media.css" />
+
+  <script defer src="js/common.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>
+</head>
+
+<body>
+  <a href="#content" class="skip">본문 바로가기</a>
+
+  <div class="wrap">
+    <!-- ===================== HEADER (메인과 동일) ===================== -->
+    <header class="site_header" id="top">
+      <div class="inner header_inner">
+        <a href="index.html" class="logo" aria-label="LAIKA CINEMA 홈">
+          <img src="./img/logo.png" alt="LAIKA CINEMA" />
+        </a>
+
+        <nav class="site_nav" aria-label="주 메뉴">
+          <ul class="gnb" id="gnb">
+            <li class="gnb_item" data-menu="laica">
+              <a href="laica.html" class="gnb_link">라이카시네마</a>
+              <ul class="sub_list">
+                <li><a href="#">SPACE DOGS</a></li>
+                <li><a href="#">이용안내 및 시설</a></li>
+                <li><a href="#">예매방법</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="movie">
+              <a href="movie.html" class="gnb_link" aria-current="page">영화</a>
+              <ul class="sub_list">
+                <li><a href="#">현재상영작</a></li>
+                <li><a href="#">상영예정작</a></li>
+                <li><a href="#">상영종료작</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="ticket">
+              <a href="#" class="gnb_link">예매</a>
+              <ul class="sub_list">
+                <li><a href="#">예매 바로가기</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="event">
+              <a href="#" class="gnb_link">이벤트</a>
+              <ul class="sub_list">
+                <li><a href="#">현장이벤트</a></li>
+                <li><a href="#">기획전 / 행사</a></li>
+              </ul>
+            </li>
+
+            <li class="gnb_item" data-menu="add">
+              <a href="#" class="gnb_link">더보기</a>
+              <ul class="sub_list">
+                <li><a href="#">단체 / 대관문의</a></li>
+                <li><a href="#">공지 / 문의</a></li>
+                <li><a href="#">요금 및 쿠폰</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="right">
+          <button type="button" class="icon_btn btn_search" aria-controls="searchLayer" aria-expanded="false">
+            <span class="sr_only">검색 열기</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm7.8 5.3-4.2-4.2 1.4-1.4 4.2 4.2-1.4 1.4Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+
+          <button type="button" class="icon_btn btn_ham" aria-controls="megaLayer" aria-expanded="false">
+            <span class="sr_only">전체 메뉴 열기</span>
+            <span class="ham_lines" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MEGA MENU -->
+      <div class="mega_layer" id="megaLayer" aria-hidden="true">
+        <div class="mega_dim" data-layer-close="mega"></div>
+
+        <div class="mega_panel" aria-label="전체 하위 메뉴">
+          <div class="inner mega_inner">
+            <div class="mega_grid">
+              <div class="mega_col" data-col="laica">
+                <ul class="mega_list">
+                  <li><a href="laica.html"><h3>라이카시네마</h3></a></li>
+                  <li><a href="#">SPACE DOGS</a></li>
+                  <li><a href="#">이용안내 및 시설</a></li>
+                  <li><a href="#">예매방법</a></li>
+                  <li><a href="#">오시는 길</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="movie">
+                <ul class="mega_list">
+                  <li><a href="movie.html"><h3>영화</h3></a></li>
+                  <li><a href="#">현재상영작</a></li>
+                  <li><a href="#">상영예정작</a></li>
+                  <li><a href="#">상영종료작</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="ticket">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>예매</h3></a></li>
+                  <li><a href="#">예매 바로가기</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="event">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>이벤트</h3></a></li>
+                  <li><a href="#">현장 이벤트</a></li>
+                  <li><a href="#">기획전/행사</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col" data-col="add">
+                <ul class="mega_list">
+                  <li><a href="#"><h3>더보기</h3></a></li>
+                  <li><a href="#">단체/대관문의</a></li>
+                  <li><a href="#">공지/문의</a></li>
+                  <li><a href="#">요금 및 쿠폰</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH LAYER -->
+      <div class="search_layer" id="searchLayer" aria-hidden="true">
+        <div class="search_dim" data-layer-close="search"></div>
+
+        <div class="search_panel" role="dialog" aria-modal="true" aria-label="검색">
+          <form class="search_form" action="#" method="get">
+            <input type="search" name="q" placeholder="검색어를 입력하세요" aria-label="검색어 입력" />
+            <button type="submit" class="btn btn_primary">검색</button>
+          </form>
+
+          <button type="button" class="search_close" data-layer-close="search" aria-label="검색 닫기">닫기</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="content" class="movie_page">
+      <h1 class="sr_only">영화</h1>
+
+      <!-- ✅ 히어로 슬라이더: 메인페이지 그대로 재사용 -->
+      <section class="main_visual">
+        <div class="hero_slider" data-slider="hero">
+          <button type="button" class="slider_btn prev" aria-label="이전 슬라이드"><span aria-hidden="true">‹</span></button>
+
+          <div class="swiper">
+            <ul class="swiper_wrapper">
+              <li class="swiper-slide">
+                <a href="#">
+                  <div class="hero_media" aria-hidden="true">
+                    <div class="hero_placeholder"></div>
+                    <img class="hero_img" src="./img/hero_01.jpg" alt="메인 비주얼 1">
+                  </div>
+                  <div class="txt"><p>그녀 <span>her</span></p></div>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#">
+                  <div class="hero_media" aria-hidden="true">
+                    <div class="hero_placeholder"></div>
+                    <img class="hero_img" src="./img/hero_02.jpg" alt="메인 비주얼 2">
+                  </div>
+                  <div class="txt"><p>괴물 <span>monster</span></p></div>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#">
+                  <div class="hero_media" aria-hidden="true">
+                    <div class="hero_placeholder"></div>
+                    <img class="hero_img" src="./img/hero_03.jpg" alt="메인 비주얼 3">
+                  </div>
+                  <div class="txt"><p>헤어질 결심 <span>Decision To Leave</span></p></div>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#">
+                  <div class="hero_media" aria-hidden="true">
+                    <div class="hero_placeholder"></div>
+                    <img class="hero_img" src="./img/hero_04.jpg" alt="메인 비주얼 4">
+                  </div>
+                  <div class="txt"><p>너와 나 <span>The Dream Songs</span></p></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <button type="button" class="slider_btn next" aria-label="다음 슬라이드"><span aria-hidden="true">›</span></button>
+          <div class="slider_pagination" aria-label="메인 슬라이더 페이지"></div>
+        </div>
+      </section>
+
+      <!-- ===================== NOW TOP5 (메인 무비차트와 동일 구조) ===================== -->
+      <section class="movie_section" aria-label="현재 상영작 TOP5">
+        <div class="inner">
+          <div class="movie_section_head">
+            <span class="kicker">NOW</span>
+            <h2 class="sec_title">현재 상영작 TOP5</h2>
+            <a href="#" class="sec_more">더보기</a>
+          </div>
+
+          <div class="chart_wrap">
+            <button type="button" class="chart_arrow left" aria-label="왼쪽으로"><span aria-hidden="true">‹</span></button>
+
+            <div class="chart_slider" tabindex="0" aria-label="현재 상영작 TOP5 목록">
+              <ul class="chart_list">
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_02.jpg" alt="시라트 포스터" />
+                    <span class="rank">1</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">시라트 <img src="img/age15.png" alt="15세"></h3>
+                    <p class="meta">115분 ㅣ 예매율 3.75%</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">예매</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_03.jpg" alt="하나 그리고 둘 포스터" />
+                    <span class="rank">2</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">하나 그리고 둘</h3>
+                    <p class="meta">173분 ㅣ 예매율 3.74%</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">예매</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_04.jpg" alt="해상화 포스터" />
+                    <span class="rank">3</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">해상화</h3>
+                    <p class="meta">114분 ㅣ 예매율 2.96%</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">예매</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_05.jpg" alt="헤어질 결심 포스터" />
+                    <span class="rank">4</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">헤어질 결심</h3>
+                    <p class="meta">138분 ㅣ 예매율 2.52%</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">예매</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_06.jpg" alt="괴물 포스터" />
+                    <span class="rank">5</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">괴물</h3>
+                    <p class="meta">126분 ㅣ 예매율 1.92%</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">예매</a></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" class="chart_arrow right" aria-label="오른쪽으로"><span aria-hidden="true">›</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PICK TOP5 ===================== -->
+      <section class="movie_section" aria-label="LAICA'S PICK TOP5">
+        <div class="inner">
+          <div class="movie_section_head">
+            <span class="kicker">CURATION</span>
+            <h2 class="sec_title">LAICA’S PICK TOP5</h2>
+            <a href="#" class="sec_more">더보기</a>
+          </div>
+
+          <div class="chart_wrap">
+            <button type="button" class="chart_arrow left" aria-label="왼쪽으로"><span aria-hidden="true">‹</span></button>
+
+            <div class="chart_slider" tabindex="0" aria-label="LAICA’S PICK TOP5 목록">
+              <ul class="chart_list">
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_01.jpg" alt="라이카 픽 1" />
+                    <span class="rank">1</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">라이카 픽 1</h3>
+                    <p class="meta">기획전 ㅣ 추천작</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">자세히 보기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_02.jpg" alt="라이카 픽 2" />
+                    <span class="rank">2</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">라이카 픽 2</h3>
+                    <p class="meta">기획전 ㅣ 추천작</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">자세히 보기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_03.jpg" alt="라이카 픽 3" />
+                    <span class="rank">3</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">라이카 픽 3</h3>
+                    <p class="meta">기획전 ㅣ 추천작</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">자세히 보기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_04.jpg" alt="라이카 픽 4" />
+                    <span class="rank">4</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">라이카 픽 4</h3>
+                    <p class="meta">기획전 ㅣ 추천작</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">자세히 보기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_05.jpg" alt="라이카 픽 5" />
+                    <span class="rank">5</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">라이카 픽 5</h3>
+                    <p class="meta">기획전 ㅣ 추천작</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">자세히 보기</a></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" class="chart_arrow right" aria-label="오른쪽으로"><span aria-hidden="true">›</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SOON ===================== -->
+      <section class="movie_section" aria-label="상영 예정작">
+        <div class="inner">
+          <div class="movie_section_head">
+            <span class="kicker">SOON</span>
+            <h2 class="sec_title">상영 예정작</h2>
+            <a href="#" class="sec_more">더보기</a>
+          </div>
+
+          <div class="chart_wrap">
+            <button type="button" class="chart_arrow left" aria-label="왼쪽으로"><span aria-hidden="true">‹</span></button>
+
+            <div class="chart_slider" tabindex="0" aria-label="상영 예정작 목록">
+              <ul class="chart_list">
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/after_01.jpg" alt="상영 예정작 1" />
+                    <span class="rank">1</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">상영 예정작 1</h3>
+                    <p class="meta">2026.02.25 ㅣ SOON</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">알림받기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_06.jpg" alt="상영 예정작 2" />
+                    <span class="rank">2</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">상영 예정작 2</h3>
+                    <p class="meta">D-13 ㅣ 개봉 예정</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">알림받기</a></div>
+                  </div>
+                </li>
+
+                <li class="chart_item">
+                  <a href="#" class="poster">
+                    <img src="./img/poster_04.jpg" alt="상영 예정작 3" />
+                    <span class="rank">3</span>
+                  </a>
+                  <div class="info">
+                    <h3 class="movie_tit">상영 예정작 3</h3>
+                    <p class="meta">D-19 ㅣ 개봉 예정</p>
+                    <div class="btn_row"><a href="#" class="btn btn_sm btn_outline">알림받기</a></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" class="chart_arrow right" aria-label="오른쪽으로"><span aria-hidden="true">›</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FINDER (두번째 이미지 스타일) ===================== -->
+      <section class="movie_finder" aria-label="검색">
+        <div class="inner">
+          <div class="finder_card">
+            <h2 class="finder_title">무엇을 찾고 계신가요?<span aria-hidden="true">›</span></h2>
+
+            <form class="finder_form" action="#" method="get" role="search" aria-label="영화 검색">
+              <!-- 썸네일 이미지: 원하는 걸로 교체 -->
+              <span class="finder_avatar" aria-hidden="true">
+                <img src="img/finder_char.png" alt="">
+              </span>
+
+              <!-- placeholder는 커스텀으로 보여줄거라 공백 처리 -->
+              <input class="finder_input" type="search" name="q" placeholder=" " aria-label="검색어 입력" />
+
+              <!-- 커스텀 placeholder(부분 컬러 가능) -->
+              <span class="finder_placeholder" aria-hidden="true">
+                <strong>너자 2</strong>를 검색해보세요
+              </span>
+
+              <button type="submit" class="finder_submit" aria-label="검색">
+                <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm7.8 5.3-4.2-4.2 1.4-1.4 4.2 4.2-1.4 1.4Z"
+                    fill="currentColor" />
+                </svg>
+              </button>
+            </form>
+
+            <div class="finder_chips" aria-label="추천 메뉴">
+              <a href="#" class="finder_chip is_primary">
+                <span class="chip_icon" aria-hidden="true">🍿</span>
+                팝콘주문
+              </a>
+
+              <a href="#" class="finder_chip">VIP라운지</a>
+
+              <a href="#" class="finder_chip">
+                <span class="chip_icon" aria-hidden="true">🎁</span>
+                경품 이벤트
+              </a>
+
+              <a href="#" class="finder_chip is_accent">
+                <span class="chip_avatar" aria-hidden="true">
+                  <img src="img/finder_char.png" alt="">
+                </span>
+                CGV단독개봉 &lt;너자2&gt;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER (메인과 동일) ===================== -->
+    <footer class="site_footer">
+      <div class="inner">
+        <div class="footer_top">
+          <a href="#top" class="footer_logo" aria-label="상단으로 이동">
+            <img src="img/graylogo.jpg" alt="LAIKA CINEMA" />
+          </a>
+
+          <ul class="footer_links">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+          </ul>
+        </div>
+
+        <address class="footer_addr">
+          <p>주소. 서울특별시 서대문구 연희로 8길 18, 스페이스독 1층 ㅣ대표자명 : 서기분ㅣ 사업자등록번호 414-49-00381</p>
+          <strong>Tel. 070-7780-0963</strong>
+          <p>(유료, 평일 09시~18시)</p>
+          <strong>Fax. 02-322-2135</strong>
+          <p>(유료, 평일 09시~18시)</p>
+        </address>
+
+        <p class="copyright">Copyright ⓒ 2026 LAIKA CINEMA All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
