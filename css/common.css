@@ -1201,7 +1201,7 @@ body {
 
 /* ===================== FOOTER ===================== */
 .site_footer{
-  background:#000;
+  /* background:#000; */
   padding:64px 0 52px;
   color:rgba(255,255,255,0.78);
 }
@@ -1240,14 +1240,14 @@ body {
 
 .footer_addr{
   font-style:normal;
-  color:rgba(255,255,255,0.60);
+  color:rgba(0, 0, 0, 0.6);
   font-size:13px;
   line-height:1.7;
 }
 
 .footer_addr p{ margin:6px 0; }
 .footer_addr strong{
-  color:rgba(255,255,255,0.78);
+  color:rgba(0, 0, 0, 0.78);
   font-weight:800;
 }
 .footer_addr .muted{
@@ -1277,10 +1277,10 @@ body {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  color:rgba(255,255,255,0.75);
+  color:rgba(0, 0, 0, 0.75);
   transition:background .2s ease,color .2s ease,transform .15s ease;
 }
-.footer_sns a:hover{ background:rgba(255,255,255,0.12); color:#fff; }
+.footer_sns a:hover{ background:rgba(255,255,255,0.12); color:#000000; }
 .footer_sns a:active{ transform:translateY(1px); }
 .footer_sns i{ font-size:20px; }
 
@@ -1303,7 +1303,7 @@ body {
   margin:0;
   font-size:14px;
   font-weight:650;
-  color:rgba(255,255,255,0.55);
+  color:rgba(0, 0, 0, 0.55);
 }
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
