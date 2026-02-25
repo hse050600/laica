@@ -1194,9 +1194,15 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* ===================== AFTER ===================== */
+.after{}
+.after .inner{padding: 50px 100px;}
+.after .inner .after_poster{width: 1800px;}
+.after_poster em{}
+.after_poster h3{}
+
 /* ===================== FOOTER ===================== */
 .site_footer {
-  /* background: #0f0f10; */
   color: rgba(0, 0, 0, 0.78);
   padding: 46px 0;
 }

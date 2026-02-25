@@ -166,13 +166,13 @@
 /* 커스텀 placeholder */
 .finder_placeholder{
   position: absolute;
-  left: 78px;
+  left: 28px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
 
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   color: rgba(17,17,17,0.75);
 
   transition: opacity 0.18s ease, transform 0.18s ease;
@@ -180,7 +180,7 @@
 
 .finder_placeholder strong{
   color: #2563eb;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .finder_input:focus + .finder_placeholder,
@@ -226,7 +226,7 @@
   border: 1px solid rgba(17,17,17,0.12);
   background: #fff;
 
-  font-weight: 900;
+  font-weight: 700;
   color: #111;
   letter-spacing: -0.02em;
 }
@@ -245,7 +245,7 @@
 }
 
 .finder_chip.is_primary{
-  background: #ffe55b;
+  background: #ffa23f;
   border-color: transparent;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .finder_chip.is_accent{
-  background: #f6b8a8;
+  background: #e3e3e3;
   border-color: transparent;
 }
 
