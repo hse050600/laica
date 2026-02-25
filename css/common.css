@@ -551,7 +551,7 @@ body {
 
 /* ===================== MOVIE CHART ===================== */
 .movie_chart {
-  padding: 400px 0px 76px;
+  padding: 400px 50px 76px;
   background: var(--back);
 }
 
@@ -1200,50 +1200,111 @@ body {
 
 
 /* ===================== FOOTER ===================== */
-.site_footer {
-  color: rgba(0, 0, 0, 0.78);
-  padding: 46px 0;
+.site_footer{
+  background:#000;
+  padding:64px 0 52px;
+  color:rgba(255,255,255,0.78);
 }
 
-.footer_top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+.site_footer .inner{
+  max-width: 100%;
+  padding: 0 80px;
 }
 
-.footer_logo {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  color: #000000;
+/* 좌/우 2컬럼 */
+.footer_inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
 }
 
-.footer_links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+/* LEFT */
+.footer_left{
+  max-width: 900px;
 }
 
-.footer_links a:hover {
-  color: #000000;
+.footer_links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
 }
 
-.footer_addr {
-  margin-top: 16px;
-  font-style: normal;
-  color: rgba(0, 0, 0, 0.68);
+.footer_links a{
+  color:rgba(255,255,255,0.75);
+  font-weight:700;
+  font-size:14px;
+}
+.footer_links a:hover{ color:#fff; }
+
+.footer_addr{
+  font-style:normal;
+  color:rgba(255,255,255,0.60);
+  font-size:13px;
+  line-height:1.7;
 }
 
-.copyright {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 13px;
-  font-weight: 650;
+.footer_addr p{ margin:6px 0; }
+.footer_addr strong{
+  color:rgba(255,255,255,0.78);
+  font-weight:800;
+}
+.footer_addr .muted{
+  color:rgba(255,255,255,0.45);
+  font-weight:600;
+  margin-left:6px;
 }
 
+/* RIGHT */
+.footer_right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:14px;
+  text-align:right;
+}
+
+.footer_sns{
+  display:flex;
+  gap:10px;
+}
+
+.footer_sns a{
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,0.75);
+  transition:background .2s ease,color .2s ease,transform .15s ease;
+}
+.footer_sns a:hover{ background:rgba(255,255,255,0.12); color:#fff; }
+.footer_sns a:active{ transform:translateY(1px); }
+.footer_sns i{ font-size:20px; }
+
+/* ✅ 우측 로고(이미지) */
+.footer_brand{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;     /* 로고 이미지가 흰 박스 포함이면 이 줄 삭제 가능 */
+  padding:10px 14px;   /* 흰 박스 여백 */
+}
+
+.footer_brand img{
+  height:28px;
+  width:auto;
+  display:block;
+}
+
+.copyright{
+  margin:0;
+  font-size:14px;
+  font-weight:650;
+  color:rgba(255,255,255,0.55);
+}
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {

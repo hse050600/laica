@@ -118,6 +118,20 @@
   }
 }
 
+  .site_footer .inner{ padding:0 24px; }
+
+  .footer_inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:28px;
+  }
+
+  .footer_right{
+    align-items:flex-start;
+    text-align:left;
+  }
+
+
 /* 480px 이하 */
 @media (max-width: 480px) {
   .tit { font-size: 22px; }
