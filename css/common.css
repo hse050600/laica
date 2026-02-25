@@ -1195,11 +1195,9 @@ body {
   transform: translateY(0);
 }
 /* ===================== AFTER ===================== */
-.after{}
+
 .after .inner{padding: 50px 100px;}
-.after .inner .after_poster{width: 1800px;}
-.after_poster em{}
-.after_poster h3{}
+
 
 /* ===================== FOOTER ===================== */
 .site_footer {
